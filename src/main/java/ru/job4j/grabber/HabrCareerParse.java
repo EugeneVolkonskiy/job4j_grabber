@@ -29,4 +29,9 @@ public class HabrCareerParse {
             });
         }
     }
+
+    private String retrieveDescription(String link) throws IOException {
+        Document doc = Jsoup.connect(link).get();
+        return doc.select(".vacancy-description__text").first().text();
+    }
 }
