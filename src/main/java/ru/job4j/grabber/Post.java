@@ -4,11 +4,20 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class Post {
+    private static int count = 1;
     private int id;
     private String title;
     private String link;
     private String description;
     private LocalDateTime created;
+
+    public Post(String title, String link, String description, LocalDateTime created) {
+        id = count++;
+        this.title = title;
+        this.link = link;
+        this.description = description;
+        this.created = created;
+    }
 
     public int getId() {
         return id;
